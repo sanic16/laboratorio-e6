@@ -1,0 +1,6 @@
+.login{
+    min-height: calc(100vh - 89.6px - 24px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
