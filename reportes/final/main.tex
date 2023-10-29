@@ -1,59 +1,50 @@
-\documentclass[osajnl,twocolumn,showpacs,superscriptaddress,10pt]{revtex4-1}
-%
-\usepackage{dcolumn}% Align table columns on decimal point
-\usepackage{bm}% bold math
 
-\usepackage[spanish,es-tabla]{babel}
+\documentclass[journal]{IEEEtran}
+\usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{makeidx}
 \usepackage{graphicx}
-\usepackage{subfig}
-\usepackage{gensymb}
-\usepackage{physics}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-\usepackage[pdftex]{hyperref}
-\usepackage{multirow}
 \usepackage{float}
-\usepackage{booktabs}
-\usepackage{listingsutf8}
-\usepackage{hyperref}
 \usepackage{listings}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{cite}
+\usepackage{hyperref}
 \usepackage[table,xcdraw]{xcolor}
 
-\definecolor{myblue}{RGB}{0,0,255} % Define your keyword color
-%\usepackage[table,xcdraw]{xcolor}
-\decimalpoint
-%\bibliographystyle{IEEEtran}
-%\bibliography{IEEEabrv,mybibfile}
-%
-%
+\hypersetup{
+    unicode=false,
+    linkcolor=red,
+    citecolor=green,
+    urlcolor=red,
+    colorlinks=true
+}
+
+\author{
+    Kevin Alexander, Medina Monterroso,\IEEEmembership{ 2019-02084}\\
+    Mike Antony Stuardo Medina Guzmán,\IEEEmembership{2019-03908} \\
+    Julio Rubén Sanic Martínez,\IEEEmembership{2012-22286}\\Grupo COM2D1
+
+}
+
+\title{\textbf{Fase 2 -  Sistema de Apoyo en la
+        Movilidad para una Persona no Vidente}\\
+    \small{
+        Catedrático, Ing. Ligia Deyanira Aguilar, Escuela de Mecánica Eléctrica, Laboratorio de Electrónica 6, Primer Semestre 2023, Universidad San Carlos, Edificio T1, Ciudad Universitaria, Zona 12, Guatemala.
+    }}
 
 \begin{document}
-%Titulo
-\title{Fase 2 -  Sistema de Apoyo en la
-Movilidad para una Persona no Vidente}
-\thanks{Electronica 6}
+\maketitle
 
-\author{Kevin Alexander, Medina Monterroso,\IEEEmembership{ 2019-02084}}\email{e-mail: kevin2000medina14@gmail.com}
-\author{Mike Antony Stuardo Medina Guzmán,\IEEEmembership{ 2019-03908} }
-\author{Julio Rubén Sanic Martínez,\IEEEmembership{ 2012-22286} Grupo E6\_(B-03) }
+\section{Introducción}
 
-
-\affiliation{Catedrático, Ing. Ligia Deyanira Aguilar, Escuela de Mecánica Eléctrica, Laboratorio de Electrónica 6, Primer Semestre 2023, Universidad San Carlos, Edificio T1, Ciudad Universitaria, Zona 12, Guatemala.}%
-
-%\collaboration{MUSO Collaboration}%\noaffiliation
-%\noaffiliation
-
-\date{\today}%
-
-\maketitle{}
-%Resumen
-\begin{abstract}
-El proyecto consiste en crear un sistema para ayudar a personas no videntes a detectar objetos cercanos. Se utilizan dos sensores, uno a la altura de la cintura y otro cerca del suelo, para detectar objetos. Cuando se detecta un objeto, se activa una alarma y se envían datos a un dashboard en tiempo real que muestra información sobre la detección. El sistema se basa en una FPGA y se puede programar en Python y/o JavaScript. El objetivo es mejorar la movilidad y seguridad de las personas no videntes, basando este documento en la fase temprana de estudio del mismo
-\end{abstract}
+El proyecto consiste en crear un sistema para ayudar a personas no videntes a
+detectar objetos cercanos. Se utilizan dos sensores, uno a la altura de la
+cintura y otro cerca del suelo, para detectar objetos. Cuando se detecta un
+objeto, se activa una alarma y se envían datos a un dashboard en tiempo real
+que muestra información sobre la detección. El sistema se basa en una FPGA y se
+puede programar en Python y/o JavaScript. El objetivo es mejorar la movilidad y
+seguridad de las personas no videntes, basando este documento en la fase
+temprana de estudio del mismo
 
 
 \section{Objetivos}
@@ -148,7 +139,6 @@ JavaScript es un lenguaje de programación versátil y de alto nivel que se util
   \item \textbf{framer-motion}:
   Framer Motion es una biblioteca de animación popular para aplicaciones React. Simplifica el proceso de agregar animaciones a elementos web, facilitando la creación de interfaces de usuario fluidas e interactivas. Con Framer Motion, se puede animar componentes, transiciones y gestos, mejorando la experiencia general del usuario en aplicaciones React. Es conocido por su sintaxis declarativa y su flexibilidad, lo que hace que las animaciones complejas sean más accesibles para los desarrolladores.
 \end{itemize}
-
 \subsection*{Servidor para comunicación de Websockets (JavaScript backend)}
 \begin{itemize}
     \item \textbf{node.js}: 
@@ -214,11 +204,12 @@ Traslado del circuito a PCB u cambio de estética al montaje del sistema de ayud
     
     \item \textbf{Módulo de Visualización en Tiempo Real:} Este módulo se utilizará para mostrar los gráficos de radar y la tabla en tiempo real en el dashboard. La visualización en tiempo real es esencial para proporcionar información en tiempo real al usuario no vidente y mejorar su movilidad y seguridad.
 \end{itemize}
+
 \section{Diseño Experimental}
 
 El proyecto consiste en un sistema de apoyo para personas no videntes, el diseño del circuito propuesto se analiza tal como se postula en la propuesta de proyecto, mediante dos partes válidas, la primera siendo una interfaz de identificación del sensor, donde se indicara por medio de sus coordenadas la distancia del objeto que se detectó. Mientras, la segunda interfaz se basara plenamente en la muestra de gráficos de radar de los sensores, donde mediante el análisis de los datos de los sensores se presentaran así ambas graficas.\\
 
-El análisis del sistema de diseño se basa en la idea de este comportamiento diagramado por medio del flujo de las ideas centrales de ambas interfaces y el concepto de tiempo para la realización del mismo:\\
+El análisis del sistema de diseño se basa en la idea de este comportamiento diagramado por medio del flujo de las ideas centrales de ambas interfaces y el concepto de tiempo para la realización del mismo:
 
 \subsection{Presupuesto y materiales a utilizar.}
 
@@ -245,7 +236,6 @@ A partir del análisis de las propuestas y el estudio para la resolución del pr
 \end{tabular}
 \end{center}
 \end{table}
-
 
 \subsection{Cronograma}
 
@@ -571,21 +561,4 @@ Como se menciona en la sección \ref{sec:Propuesta de algoritmos a utilizar}
     \item Las demostraciones usadas en la evlacuación de los elementos electronicos utilizados permite comprender los usos y aplicaciones del lenguaje ensamblador en sistemas controlas.
 
 \end{itemize}
-
-\begin{thebibliography}{99}
-%Las fuentes de consulta se citan en forma organizada y homogénea, tanto de los libros, de los artículos y, en general, de las obras consultadas, que fueron indispensables indicar o referir en el contenido del trabajo.
-\bibitem{} Boylestad.R.L. 2011. \textit{Introducción al Análisis de Circuitos}. 12mo Ed. PEARSON. México.
-
-\bibitem{} Boylestad.R.L. 2010. \textit{Electrónica: Teoría de Circuitos y Dispositivos Electrónicos}. 10mo Ed. PEARSON. México.
-
-\bibitem{} González Ermakov, M. (2019). Modulación por ancho de pulso de alta resolución en FPGA (Bachelor's thesis). 
-
-\bibitem{} Flanagan, D. 2011. \textit{JavaScript: The Definitive Guide}. 6ta Ed. O'Reilly Media. 
-
-\bibitem{} Van Rossum, G. 2010. \textit{Python Programming for the Absolute Beginner}. 3ra Ed. Course Technology.
-
-\bibitem{} Rauch, R., \& Kirk, T. 2018. \textit{Node.js Design Patterns}. 3ra Ed. Packt Publishing.
-
-\end{thebibliography}
-
 \end{document}
