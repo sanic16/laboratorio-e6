@@ -65,9 +65,8 @@ import {
   };
   
   let n = 0;
-  // sin function in degrees
-  // const sin = (x) => Math.sin((10 * (x * Math.PI)) / 180);
-  let wsConn; // WebSocket connection
+  
+  const socket = io('ws://localhost:3000')
   
   // const socket = io('http://localhost:3000')
   function isValidInteger(value){
