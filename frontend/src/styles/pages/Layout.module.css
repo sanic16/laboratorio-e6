@@ -1,0 +1,9 @@
+.body{
+    min-height: 100vh;
+    display: flow-root;
+}
+.main{
+    margin-top: 89.6px;
+    padding: 0;
+    min-height: calc(100vh - 89.6px - 24px);
+}
