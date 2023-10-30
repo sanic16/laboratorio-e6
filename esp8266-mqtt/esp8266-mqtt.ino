@@ -16,11 +16,17 @@ void setup(void){
   ConnectWiFi_STA(true);
 
   InitMqtt();
+
+  //randomSeed(analogRead(0));
   
 }
-
+unsigned int n = 0;
+float x = 0.0;
 void loop(void){
   HandleMqtt();
-  PublishMqtt("hello " + String(millis()));
-  delay(1000);
+  x = 512*sin(2*PI*(n/25.0)) + 512;
+  n++;
+  
+  PublishMqtt(String(analogRead(0)));
+  delay(200);
 }

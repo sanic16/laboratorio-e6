@@ -1,6 +1,7 @@
 const express = require('express')
 const http = require('http')
 const {Server: SocketServer} = require('socket.io')
+const cors = require('cors')
 
 const app = express()
 const server = http.createServer(app)
@@ -10,9 +11,11 @@ const io = new SocketServer(server, {
     }
 })
 
+const port = process.env.PORT || 3000
+
 let mqtt_msg = ''
 
-server.listen(3000, () => {
+server.listen(port, () => {
     console.log('Server running on port 3000')
 })
 
