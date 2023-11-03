@@ -110,7 +110,7 @@ const ChartJsExample = () => {
           margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
         >
           <XAxis dataKey="from" />
-          <YAxis domain={[0, 1023]} />
+          <YAxis domain={[0, 1024]} />
           <Tooltip />
           <CartesianGrid stroke="#222" />
           <Line type="monotone" dataKey="data" stroke="#0000ff" yAxisId={0} />
